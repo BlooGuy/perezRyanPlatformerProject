@@ -15,9 +15,9 @@ public class EnemyBullet : MonoBehaviour
         StartCoroutine(CountDownTimer());
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.gameObject.name == "Player")
+        if (collision.gameObject.name == "Player")
         {
             
             gameController.LoseLife();

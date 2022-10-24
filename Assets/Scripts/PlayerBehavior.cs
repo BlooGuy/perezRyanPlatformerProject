@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBehavior : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerBehavior : MonoBehaviour
     public Transform kickPoint;
     public GameObject bulletPrefab;
     public GameObject kickPrefab;
+    private GameObject gameEnd;
     
     private bool isFacingRight = true;
 
@@ -30,6 +32,7 @@ public class PlayerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         rb2d = GetComponent<Rigidbody2D>();
     }
 
@@ -93,7 +96,9 @@ public class PlayerBehavior : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         jumpBase = 0;
+        
         noJump = false;
+        
     }
 
     private void Flip()

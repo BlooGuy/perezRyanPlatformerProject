@@ -202,10 +202,10 @@ MonoBehaviour:
     m_Bits: 64
   bodyCollider: {fileID: 3542058353499064667}
   player: {fileID: 0}
-  shootPos: {fileID: 0}
+  shootPos: {fileID: 1575442499542054182}
   hp: 100
   deathEffect: {fileID: 0}
-  bullet: {fileID: 0}
+  bullet: {fileID: 6295953732282637779, guid: ed5b843ed4a9fc0408c06f7fc96f6009, type: 3}
 --- !u!50 &5814880297181907312
 Rigidbody2D:
   serializedVersion: 4
