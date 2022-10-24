@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    private GameController gameController;
     public float Speed, range, timeShot, bulletSpeed;
     private float playerDistance;
 

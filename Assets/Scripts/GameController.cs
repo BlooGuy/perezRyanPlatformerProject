@@ -26,4 +26,15 @@ public class GameController : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
     }
+
+    public void LoseLife()
+    {
+        Health--;
+        HealthText.text = "Health: " + Health.ToString();
+        
+        if (Health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
