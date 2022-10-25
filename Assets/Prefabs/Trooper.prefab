@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 5814880297181907312}
   - component: {fileID: 646199683671852553}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Trooper
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
