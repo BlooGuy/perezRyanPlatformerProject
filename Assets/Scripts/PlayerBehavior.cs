@@ -101,6 +101,8 @@ public class PlayerBehavior : MonoBehaviour
         
     }
 
+    
+
     private void Flip()
     {
         if(isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)

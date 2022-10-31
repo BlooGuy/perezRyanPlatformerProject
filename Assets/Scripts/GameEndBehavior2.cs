@@ -1,21 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameEndBehavior : MonoBehaviour
+public class GameEndBehavior2 : MonoBehaviour
 {
     public GameObject playerRef;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     private void Update()
     {
-        
+
         if (Input.GetKey(KeyCode.R))
         {
             ReloadGame();
@@ -26,11 +25,11 @@ public class GameEndBehavior : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 
-private void ReloadGame()
+    private void ReloadGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

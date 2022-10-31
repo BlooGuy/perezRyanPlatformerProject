@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyBehavior : MonoBehaviour
 {
     private GameController gameController;
-    public float Speed, range, timeShot, bulletSpeed;
+    public float speed, range, timeShot, bulletSpeed;
     private float playerDistance;
 
     public bool onPatrol;
@@ -23,7 +23,7 @@ public class EnemyBehavior : MonoBehaviour
     public GameObject deathEffect;
     public GameObject bullet;
 
-
+    public AudioClip enemyDie;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,7 @@ public class EnemyBehavior : MonoBehaviour
 
     void Die()
     {
+        AudioSource.PlayClipAtPoint(enemyDie, transform.position);
         Instantiate(deathEffect, transform.position, Quaternion.identity );
         Destroy(gameObject);
     }
@@ -57,7 +58,8 @@ void Update()
             Patrol();
         }
 
-        playerDistance = Vector2.Distance(transform.position, player.position);
+        float v = Vector2.Distance(transform.position, player.position);
+        playerDistance = v;
 
         if (playerDistance <= range)
         {
@@ -91,7 +93,7 @@ void Update()
 
     void Patrol()
     {
-        rb.velocity = new Vector2(Speed * Time.fixedDeltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(speed * Time.fixedDeltaTime, rb.velocity.y);
         if(mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
         {
             Flip();
@@ -102,7 +104,7 @@ void Update()
     {
         onPatrol = false;
         transform.localScale = new Vector2(transform.localScale.x * -1, transform.localScale.y);
-        Speed *= -1;
+        speed *= -1;
         onPatrol = true;
     }
 
@@ -111,7 +113,7 @@ void Update()
         canShoot = false;
         yield return new WaitForSeconds(timeShot);
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
-        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * Speed * Time.fixedDeltaTime, 0f);
+        newBullet.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed * speed * Time.fixedDeltaTime, 0f);
         canShoot = true;
     }
 }

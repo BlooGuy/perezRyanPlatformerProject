@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - GroundLayer
   - GameEnd
+  - HealthPickup
   layers:
   - Default
   - TransparentFX

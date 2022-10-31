@@ -5,13 +5,17 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
-
+    public static bool isGameOver;
     public int Health = 10;
     public TMP_Text HealthText;
+    public GameObject player;
+    public GameObject gameOverScreen;
+    public GameObject deathCam;
     // Start is called before the first frame update
     void Start()
     {
         HealthText.text = "Health:" + Health.ToString();
+        
     }
 
     // Update is called once per frame
@@ -19,12 +23,14 @@ public class GameController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            Application.Quit();
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
         else if (Input.GetKey(KeyCode.R))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        
     }
 
     public void LoseLife()
@@ -34,7 +40,9 @@ public class GameController : MonoBehaviour
         
         if (Health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            player.SetActive(false);
+            gameOverScreen.SetActive(true);
+            deathCam.SetActive(true);
         }
     }
 }
