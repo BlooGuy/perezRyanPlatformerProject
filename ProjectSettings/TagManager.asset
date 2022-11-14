@@ -10,6 +10,7 @@ TagManager:
   - GroundLayer
   - GameEnd
   - HealthPickup
+  - KillZone
   layers:
   - Default
   - TransparentFX

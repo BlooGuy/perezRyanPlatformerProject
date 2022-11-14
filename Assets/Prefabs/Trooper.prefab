@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -651158775
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.990566, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -108,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8427173805811049814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.945, y: 0.022, z: 0}
+  m_LocalPosition: {x: 0.995, y: 0.022, z: 0}
   m_LocalScale: {x: 1.1358268, y: 0.5660419, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -175,8 +175,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8855863284127605223}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.07, y: -8.59, z: 0}
-  m_LocalScale: {x: 0.880416, y: 1.7666535, z: 1}
+  m_LocalPosition: {x: -3.8504, y: -8.3334, z: 0}
+  m_LocalScale: {x: 1.3196571, y: 2.3479493, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8181292061302815377}
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -651158775
   m_SortingLayer: 2
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -276,9 +276,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  range: 10
-  timeShot: 0.8
-  bulletSpeed: 5
+  range: 15
+  timeShot: 0.6
+  bulletSpeed: 0
   onPatrol: 1
   rb: {fileID: 5814880297181907312}
   groundCheckPos: {fileID: 8181292061302815377}
@@ -286,11 +286,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bodyCollider: {fileID: 3542058353499064667}
-  player: {fileID: 0}
   shootPos: {fileID: 1575442499542054182}
   hp: 100
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 657941978309028952, guid: 2f0bd3f481e52a5428fb04d052df02d6, type: 3}
   bullet: {fileID: 6295953732282637779, guid: ed5b843ed4a9fc0408c06f7fc96f6009, type: 3}
+  enemyHurt: {fileID: 8300000, guid: 5e564b55efa3a684285b9d58c2d50e4a, type: 3}
   enemyDie: {fileID: 8300000, guid: e96ae3bcccff04f41a5af9c1d6b09bf5, type: 3}
 --- !u!50 &5814880297181907312
 Rigidbody2D:

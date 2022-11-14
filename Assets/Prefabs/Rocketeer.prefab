@@ -109,8 +109,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8912984936118286076}
   m_LocalRotation: {x: -0, y: -0, z: -0.24024276, w: 0.97071284}
-  m_LocalPosition: {x: -0.527, y: 0.268, z: 0}
-  m_LocalScale: {x: 0.32960674, y: 0.92887896, z: 1}
+  m_LocalPosition: {x: -0.68, y: 0.309, z: 0}
+  m_LocalScale: {x: 0.7006121, y: 0.92887896, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8912984936829046796}
@@ -259,8 +259,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8912984936829046786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -28.636974, y: -9.102635, z: 0}
-  m_LocalScale: {x: 0.880416, y: 1.7666535, z: 1}
+  m_LocalPosition: {x: -28.4451, y: -8.7668, z: 0}
+  m_LocalScale: {x: 1.2641892, y: 2.5273747, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8912984936554774740}
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  range: 15
+  range: 20
   timeShot: 3
   bulletSpeed: 1
   onPatrol: 1
@@ -371,11 +371,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   bodyCollider: {fileID: 8912984936829046798}
-  player: {fileID: 0}
   shootPos: {fileID: 8912984936490081387}
-  hp: 100
-  deathEffect: {fileID: 0}
+  hp: 160
+  deathEffect: {fileID: 657941978309028952, guid: 2f0bd3f481e52a5428fb04d052df02d6, type: 3}
   bullet: {fileID: 1331701380121955970, guid: 9f68f97166857b64f9c6dea0775a88ac, type: 3}
+  enemyHurt: {fileID: 8300000, guid: 5e564b55efa3a684285b9d58c2d50e4a, type: 3}
   enemyDie: {fileID: 8300000, guid: e96ae3bcccff04f41a5af9c1d6b09bf5, type: 3}
 --- !u!50 &8912984936829046784
 Rigidbody2D:

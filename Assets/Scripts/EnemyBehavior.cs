@@ -15,19 +15,21 @@ public class EnemyBehavior : MonoBehaviour
     public Transform groundCheckPos;
     public LayerMask groundLayer;
     public Collider2D bodyCollider;
-    public Transform player, shootPos;
-
+    public Transform shootPos;
+    private Transform player;
 
 
     public int hp = 100;
     public GameObject deathEffect;
     public GameObject bullet;
 
+    public AudioClip enemyHurt;
     public AudioClip enemyDie;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         onPatrol = true;
         canShoot = true;
     }
@@ -35,7 +37,7 @@ public class EnemyBehavior : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
-
+        AudioSource.PlayClipAtPoint(enemyHurt, transform.position);
         if (hp <= 0)
         {
             Die();
@@ -86,7 +88,7 @@ void Update()
     {
         if (onPatrol)
         {
-            mustTurn = Physics2D.OverlapCircle(groundCheckPos.position, 0.1f, groundLayer);
+            mustTurn = Physics2D.OverlapCircle(groundCheckPos.position, 0.5f, groundLayer);
         }
 
     }
@@ -110,6 +112,7 @@ void Update()
 
     IEnumerator Shoot()
     {
+        print("enemy pew");
         canShoot = false;
         yield return new WaitForSeconds(timeShot);
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);

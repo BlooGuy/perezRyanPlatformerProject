@@ -22,11 +22,16 @@ public class MainMenuController : MonoBehaviour
 
     public void QuitGame()
     {
-        
+        AudioSource.PlayClipAtPoint(buttonClick, transform.position);
         Application.Quit();
     }
 
     public void How2Play()
+    {
+        AudioSource.PlayClipAtPoint(buttonClick, transform.position);
+    }
+
+    public void OpenCodex()
     {
         AudioSource.PlayClipAtPoint(buttonClick, transform.position);
     }

@@ -3,18 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using UnityEngine.TerrainTools;
+
 public class GameController : MonoBehaviour
 {
-    public static bool isGameOver;
-    public int Health = 10;
-    public TMP_Text HealthText;
-    public GameObject player;
-    public GameObject gameOverScreen;
-    public GameObject deathCam;
+    private int deathScreen;
+    public int health = 20;
+    public TMP_Text healthText;
+    private GameObject player;
+    public GameObject deathMark;
+    public GameObject deathFade;
+    public AudioClip playerPain;
+    public float timeSoundDie;
+    public float deathTimer = 3;
     // Start is called before the first frame update
     void Start()
     {
-        HealthText.text = "Health:" + Health.ToString();
+        player = GameObject.FindGameObjectWithTag("Player");
+        //deathMark = GameObject.FindGameObjectWithTag("DeathMark");
+        deathScreen = SceneManager.GetActiveScene().buildIndex + 1;
+        healthText.text = "Health:" + health.ToString();
         
     }
 
@@ -35,14 +44,34 @@ public class GameController : MonoBehaviour
 
     public void LoseLife()
     {
-        Health--;
-        HealthText.text = "Health: " + Health.ToString();
+        health--;
+        healthText.text = "Health: " + health.ToString();
+        AudioSource.PlayClipAtPoint(playerPain, player.transform.position);
         
-        if (Health <= 0)
+        if (health <= 0)
         {
-            player.SetActive(false);
-            gameOverScreen.SetActive(true);
-            deathCam.SetActive(true);
+            deathFade.SetActive(true);
+            deathMark.SetActive(true);
+            StartCoroutine(DeathMark());
+
         }
+    }
+
+    public void GainHealth()
+    {
+        health = health + 1;
+        healthText.text = "Health: " + health.ToString();
+    }
+        IEnumerator DeathMark()
+    {
+        yield return new WaitForSeconds(deathTimer);
+        SceneManager.LoadScene(deathScreen);
+    }
+
+    
+    IEnumerator CountDownTimer()
+    {
+        yield return new WaitForSeconds(timeSoundDie);
+        Destroy(playerPain);
     }
 }

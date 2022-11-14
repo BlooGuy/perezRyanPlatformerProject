@@ -5,19 +5,26 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     private GameController gameController;
-    private GameObject Player;
-    public float dieTime, damage;
+    private GameObject player;
+    private Rigidbody2D rb;
+    public float dieTime, damage, force;
+    public AudioClip bulletSound, dieSound;
    // public GameObject 
     void Start()
     {
-        Player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
         StartCoroutine(CountDownTimer());
+        Vector3 direction = player.transform.position - transform.position;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * force;
+        AudioSource.PlayClipAtPoint(bulletSound, transform.position);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        AudioSource.PlayClipAtPoint(dieSound, transform.position);
+        if (collision.gameObject.CompareTag("Player"))
         {
             
             gameController.LoseLife();
@@ -39,6 +46,7 @@ public class EnemyBullet : MonoBehaviour
 
     void Die()
     {
+        
         Destroy(gameObject);
     }
 

@@ -120,11 +120,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b91f81ca40a987429f100626ca66d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 9040288212415923007, guid: 711ea939d70fcb141b704b8f0364fde9, type: 3}
   dieTime: 3
   damage: 5
   Speed: 20
-  rotateSpeed: 150
+  rotateSpeed: 100
+  rocketShoot: {fileID: 8300000, guid: df84fb62b9355234687734f01a8122ed, type: 3}
+  rocketBoom: {fileID: 8300000, guid: 3878efbe456635a49b87645049e33264, type: 3}
 --- !u!61 &5724190461780100291
 BoxCollider2D:
   m_ObjectHideFlags: 0

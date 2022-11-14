@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameEndBehavior3 : MonoBehaviour
 {
-    public GameObject playerRef;
     public GameObject winScreen;
     // Start is called before the first frame update
     void Start()
@@ -24,9 +23,9 @@ public class GameEndBehavior3 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.name == "PlayerParent")
         {
-            winScreen.SetActive(true);
+            SceneManager.LoadScene(7);
         }
     }
 

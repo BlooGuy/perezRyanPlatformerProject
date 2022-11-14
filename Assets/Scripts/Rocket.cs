@@ -6,17 +6,19 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     private GameController gameController;
-    public Transform Player;
+    private Transform player;
     private Rigidbody2D rb;
     public float dieTime, damage;
     public float Speed = 5;
     public float rotateSpeed = 200f;
+    public AudioClip rocketShoot;
+    public AudioClip rocketBoom;
 
-    public AudioClip enemyDie;
     // public GameObject 
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        AudioSource.PlayClipAtPoint(rocketShoot, transform.position);
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         gameController = FindObjectOfType<GameController>();
         StartCoroutine(CountDownTimer());
@@ -24,7 +26,7 @@ public class Rocket : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector2 direction = (Vector2)Player.position - rb.position;
+        Vector2 direction = (Vector2)player.position - rb.position;
 
         direction.Normalize();
 
@@ -37,7 +39,7 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
 
             gameController.LoseLife();
@@ -60,7 +62,7 @@ public class Rocket : MonoBehaviour
 
     void Die()
     {
-        
+        AudioSource.PlayClipAtPoint(rocketBoom, transform.position);
         Destroy(gameObject);
     }
 }
