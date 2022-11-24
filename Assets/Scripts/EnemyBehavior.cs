@@ -40,13 +40,18 @@ public class EnemyBehavior : MonoBehaviour
         AudioSource.PlayClipAtPoint(enemyHurt, transform.position);
         if (hp <= 0)
         {
-            Die();
+            timeShot = 999;
+            range = 0;
+            speed = 0;
+            StartCoroutine(Die());
         }
     }
 
-    void Die()
+    IEnumerator Die()
     {
         AudioSource.PlayClipAtPoint(enemyDie, transform.position);
+        GetComponent<Animator>().SetBool("dying", true);
+        yield return new WaitForSeconds(2);
         Instantiate(deathEffect, transform.position, Quaternion.identity );
         Destroy(gameObject);
     }
@@ -55,10 +60,7 @@ public class EnemyBehavior : MonoBehaviour
 // Update is called once per frame
 void Update()
     {
-        if (onPatrol)
-        {
-            Patrol();
-        }
+        
 
         float v = Vector2.Distance(transform.position, player.position);
         playerDistance = v;
@@ -81,26 +83,33 @@ void Update()
         else
         {
             onPatrol = true;
+            GetComponent<Animator>().SetBool("shooting", false);
         }
     }
 
     private void FixedUpdate()
     {
+       
         if (onPatrol)
         {
+            rb.velocity = new Vector2(speed * Vector2.right.x * Time.deltaTime, rb.velocity.y);
+            if (mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
+            {
+                Flip();
+            }
             mustTurn = Physics2D.OverlapCircle(groundCheckPos.position, 0.5f, groundLayer);
         }
 
     }
 
-    void Patrol()
-    {
-        rb.velocity = new Vector2(speed * Time.fixedDeltaTime, rb.velocity.y);
-        if(mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
-        {
-            Flip();
-        }
-    }
+    //void Patrol()
+    //{
+      //  rb.velocity = new Vector2(speed * Vector2.right.x * Time.deltaTime, rb.velocity.y);
+        //if(mustTurn || bodyCollider.IsTouchingLayers(groundLayer))
+        //{
+           // Flip();
+        //}
+    //}
 
     void Flip()
     {
@@ -112,6 +121,7 @@ void Update()
 
     IEnumerator Shoot()
     {
+        GetComponent<Animator>().SetBool("shooting", true);
         print("enemy pew");
         canShoot = false;
         yield return new WaitForSeconds(timeShot);
