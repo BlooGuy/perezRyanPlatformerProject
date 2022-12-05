@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5924885109648736560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.54, y: 0.16, z: 0}
+  m_LocalPosition: {x: 1.831, y: -0.034, z: 0}
   m_LocalScale: {x: 1.1358268, y: 0.5660419, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -252,13 +252,14 @@ MonoBehaviour:
   bulletSpeed: 2
   onPatrol: 1
   rb: {fileID: 8536754111934590230}
+  timeToDie: 1.2
   groundCheckPos: {fileID: 6288141875625336567}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   bodyCollider: {fileID: 7149438489217589616}
   shootPos: {fileID: 3681454015201448256}
-  hp: 400
+  hp: 500
   deathEffect: {fileID: 657941978309028952, guid: 2f0bd3f481e52a5428fb04d052df02d6, type: 3}
   bullet: {fileID: 9138819373993716070, guid: afe303219b8574149b8ab96a07752030, type: 3}
   enemyHurt: {fileID: 8300000, guid: 5e564b55efa3a684285b9d58c2d50e4a, type: 3}

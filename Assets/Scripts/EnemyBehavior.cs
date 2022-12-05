@@ -11,6 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     public bool onPatrol;
     private bool mustTurn, canShoot;
     public Rigidbody2D rb;
+    public float timeToDie = 1.6f;
     
     public Transform groundCheckPos;
     public LayerMask groundLayer;
@@ -51,7 +52,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(enemyDie, transform.position);
         GetComponent<Animator>().SetBool("dying", true);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timeToDie);
         Instantiate(deathEffect, transform.position, Quaternion.identity );
         Destroy(gameObject);
     }

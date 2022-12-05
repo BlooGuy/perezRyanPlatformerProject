@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5294622188310100831
 Transform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8127311137631240379
 Transform:
   m_ObjectHideFlags: 0
@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 5234286025205787438}
   - component: {fileID: 4401525730819225785}
   - component: {fileID: 2122286642}
+  - component: {fileID: 3682363246995557342}
   m_Layer: 0
   m_Name: Bat
   m_TagString: Enemy
@@ -322,7 +323,7 @@ Transform:
   m_GameObject: {fileID: 7131213642858824633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.1102, y: -8.4771, z: 0}
-  m_LocalScale: {x: 3.5059156, y: 2.3136284, z: 1}
+  m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 994285209146709880}
@@ -379,8 +380,8 @@ SpriteRenderer:
   m_SortingLayerID: -651158775
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 36585885, guid: 57a62a253b2686f43841c801967cb9a9, type: 3}
+  m_Color: {r: 0.7075472, g: 0.5894525, b: 0.28969386, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -407,7 +408,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.8828125}
+    oldSize: {x: 1.1, y: 1.05}
     newSize: {x: 1, y: 0.8828125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd22e9f155108d47881ae0ba2bc8dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 6
   attack: 1
   startingPoint: {fileID: 1453662745744416429}
 --- !u!114 &2122286642
@@ -481,6 +482,26 @@ MonoBehaviour:
   bullet: {fileID: 43114969713075608, guid: fd7352cb19d3a774dabea351819d0973, type: 3}
   enemyHurt: {fileID: 8300000, guid: 5e564b55efa3a684285b9d58c2d50e4a, type: 3}
   enemyDie: {fileID: 8300000, guid: e96ae3bcccff04f41a5af9c1d6b09bf5, type: 3}
+--- !u!95 &3682363246995557342
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7131213642858824633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b252ce7071fecc34ab04467f2372deb6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7520142443548380704
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &282413459301820005
 Transform:
   m_ObjectHideFlags: 0
@@ -589,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7845873458759370504}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.07, z: 0}
+  m_LocalPosition: {x: -0.022, y: 0.805, z: 0}
   m_LocalScale: {x: 1.1358268, y: 0.5660419, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

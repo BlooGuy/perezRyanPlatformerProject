@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5127723050193691059}
   - component: {fileID: 4698128084031195472}
   - component: {fileID: 3803878198720623047}
+  - component: {fileID: -1117255446119713986}
   m_Layer: 0
   m_Name: KillZone
   m_TagString: Untagged
@@ -4908,3 +4909,23 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!95 &-1117255446119713986
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132086254806171985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 043ad68f4778ea7448c1d4b83fec7073, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
-  speed: 10
+  speed: 20
   rb: {fileID: 7246324056619763626}
   dieTime: 0.25
   kickSound: {fileID: 8300000, guid: a026b66158328f040ae271cd4002cdaf, type: 3}

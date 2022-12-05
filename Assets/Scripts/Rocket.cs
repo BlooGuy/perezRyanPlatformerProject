@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     private GameController gameController;
     private Transform player;
     private Rigidbody2D rb;
+    public GameObject deathEffect;
     public float dieTime, damage;
     public float Speed = 5;
     public float rotateSpeed = 200f;
@@ -64,5 +65,6 @@ public class Rocket : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(rocketBoom, transform.position);
         Destroy(gameObject);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
     }
 }

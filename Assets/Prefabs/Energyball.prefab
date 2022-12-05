@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1434f1f678b29f44f96e626d7405cf9b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.6226105, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b91f81ca40a987429f100626ca66d33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 9040288212415923007, guid: 711ea939d70fcb141b704b8f0364fde9, type: 3}
+  deathEffect: {fileID: 657941978309028952, guid: 2f0bd3f481e52a5428fb04d052df02d6, type: 3}
   dieTime: 3
   damage: 5
   Speed: 30

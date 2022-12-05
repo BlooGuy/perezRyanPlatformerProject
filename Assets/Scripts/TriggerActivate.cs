@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerActivate : MonoBehaviour
 {
     public GameObject trigger;
+    public GameObject mainCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,6 @@ public class TriggerActivate : MonoBehaviour
     void OnTriggerEnter2D()
     {
         trigger.SetActive(true);
+        mainCam.SetActive(false);
     }
 }

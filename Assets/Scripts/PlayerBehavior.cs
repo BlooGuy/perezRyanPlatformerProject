@@ -75,11 +75,21 @@ public class PlayerBehavior : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
+            GetComponentInChildren<Animator>().SetBool("walking", true);
             newPosition += Vector2.left * Time.deltaTime * speed;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKeyUp(KeyCode.A))
         {
+            GetComponentInChildren<Animator>().SetBool("walking", false);
+        }
+            if (Input.GetKey(KeyCode.D))
+        {
+            GetComponentInChildren<Animator>().SetBool("walking", true);
             newPosition += Vector2.right * Time.deltaTime * speed;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            GetComponentInChildren<Animator>().SetBool("walking", false);
         }
         transform.position = new Vector2(Mathf.Clamp(newPosition.x, -1000, 1000), newPosition.y);
         
@@ -94,7 +104,7 @@ public class PlayerBehavior : MonoBehaviour
             AudioSource.PlayClipAtPoint(dashSound, transform.position);
             StartCoroutine(LeftDash());
         }
-
+        
         //Flip();
     }
 
@@ -111,7 +121,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         //if the object i touch is labelled as "ground", refresh my jumps
         {
-            if (collision.gameObject.name == "Platform" || collision.gameObject.name == "Nub" || collision.gameObject.name == "Pylobones" || collision.gameObject.name == "Bat")
+            if (collision.gameObject.tag == "GroundLayer") 
             {
                 AudioSource.PlayClipAtPoint(landSound, transform.position);
                 jumpBase = 0;
