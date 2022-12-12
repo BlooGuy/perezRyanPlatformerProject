@@ -123,7 +123,7 @@ void Update()
     IEnumerator Shoot()
     {
         GetComponent<Animator>().SetBool("shooting", true);
-        print("enemy pew");
+      
         canShoot = false;
         yield return new WaitForSeconds(timeShot);
         GameObject newBullet = Instantiate(bullet, shootPos.position, Quaternion.identity);
